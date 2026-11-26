@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/auth/auth.css" />
+</head>
+<body data-page="admin-login">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/admin/admin-login.html" class="brand">
+        <span class="brand-icon">A</span>
+        <span><span data-logo-text>Srikanth Online Seva</span> &middot; Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/auth/login.html" class="nav-link">&larr; Customer Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo-badge" style="background:#0f172a;">A</div>
+        <h1 style="font-size:1.45rem;">Administrator Control Login</h1>
+        <p class="text-muted">Role-Based Access Control (RBAC) — Authorized staff only</p>
+      </div>
+
+      <div id="adminLoginAlert" class="alert alert-error hidden"></div>
+
+      <form id="adminLoginForm" class="auth-form">
+        <div class="form-group">
+          <label for="adminIdentifier">Admin Mobile Number or Email <span class="req-star">*</span></label>
+          <input type="text" id="adminIdentifier" required placeholder="e.g. 9999999999" autocomplete="username" />
+        </div>
+
+        <div class="form-group">
+          <label for="adminPassword">Admin Password <span class="req-star">*</span></label>
+          <input type="password" id="adminPassword" required placeholder="Enter administrator password" autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="adminLoginBtn" style="width:100%;">
+          Sign In to Admin Panel
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <div style="font-size:0.8rem;">Customers cannot access administrator routes.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
+

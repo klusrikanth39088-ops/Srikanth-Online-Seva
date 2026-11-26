@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Support | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/customer/customer.css" />
+</head>
+<body data-page="customer-support">
+  <div class="announcement-bar hidden" data-announcement-banner></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/customer/dashboard.html" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/customer/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/customer/apply.html" class="nav-link">Apply Service</a>
+        <a href="/customer/track-status.html" class="nav-link">Track Status</a>
+        <a href="/customer/support.html" class="nav-link active">Support</a>
+        <a href="/auth/login.html" class="nav-link" id="supportLoginLink">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <div>
+        <h1>Customer Support &amp; Help Center</h1>
+        <p class="text-muted">Need help with your PAN Card or document application? Keep your <strong>Unique Application ID</strong> handy and reach us directly.</p>
+      </div>
+    </div>
+
+    <div class="support-grid">
+      <div class="support-card">
+        <h3>WhatsApp Instant Support</h3>
+        <p class="text-muted">Chat directly with our support desk for quick status updates or document assistance.</p>
+        <div style="font-size:1.25rem; font-weight:800;" data-whatsapp-number>7997284383</div>
+        <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          Open WhatsApp Chat
+        </a>
+      </div>
+
+      <div class="support-card">
+        <h3>Email Support</h3>
+        <p class="text-muted">Send queries, corrections, or payment questions with your Unique Application ID.</p>
+        <div style="font-size:1.05rem; font-weight:700; word-break:break-all;" data-email-address>ffpunjugaming@gmail.com</div>
+        <a data-email-link href="mailto:ffpunjugaming@gmail.com" class="btn btn-primary">
+          Send Support Email
+        </a>
+      </div>
+    </div>
+
+    <section class="card" style="margin-top:1.5rem;">
+      <h3>Frequently Asked Questions</h3>
+      <div style="display:grid; gap:0.85rem; margin-top:0.85rem;">
+        <div>
+          <strong>1. How does Dynamic UPI QR payment confirmation work?</strong>
+          <p class="text-muted" style="margin:0.2rem 0 0;">Once you submit your form, a unique UPI QR code locked to the exact fee is generated. Pay using any UPI app — our system automatically detects payment confirmation within seconds without entering any UTR number.</p>
+        </div>
+        <div>
+          <strong>2. Can I edit my documents after paying?</strong>
+          <p class="text-muted" style="margin:0.2rem 0 0;">Yes! As long as your status is <em>Pending</em>, you can edit details or replace uploaded files from your Dashboard. Once our admin downloads your documents for processing, the status changes to <em>Applied</em> and editing is locked.</p>
+        </div>
+        <div>
+          <strong>3. How do I track my official PAN / Document status?</strong>
+          <p class="text-muted" style="margin:0.2rem 0 0;">When your status changes to <em>Completed</em>, your Dashboard and Track Status page will display your Official Application Number, Tracking Date of Birth, and direct official portal tracking link.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div><strong data-site-name>Srikanth Online Seva</strong> &middot; <span data-footer-note>Authorized Digital Document Facilitation Center</span></div>
+      <div>
+        WhatsApp: <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener"><strong data-whatsapp-number>7997284383</strong></a> &middot;
+        Email: <a data-email-link href="mailto:ffpunjugaming@gmail.com"><strong data-email-address>ffpunjugaming@gmail.com</strong></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/customer/customer.js"></script>
+</body>
+</html>
+

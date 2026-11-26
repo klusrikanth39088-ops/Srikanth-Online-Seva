@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Sign Up | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/auth/auth.css" />
+</head>
+<body>
+  <div class="announcement-bar hidden" data-announcement-banner></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/auth/login.html" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/auth/login.html" class="nav-link">Login</a>
+        <a href="/auth/signup.html" class="nav-link active">Sign Up</a>
+        <a href="/customer/support.html" class="nav-link">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo-badge">S</div>
+        <h1 style="font-size:1.45rem;">Create Customer Account</h1>
+        <p class="text-muted">Register to apply for PAN Card &amp; online document services</p>
+      </div>
+
+      <div id="authAlert" class="alert alert-error hidden"></div>
+
+      <form id="customerSignupForm" class="auth-form">
+        <div class="form-group">
+          <label for="signupName">Full Name <span class="req-star">*</span></label>
+          <input type="text" id="signupName" required placeholder="Enter your full name" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="signupPhone">Mobile Number (10 digits) <span class="req-star">*</span></label>
+          <input type="tel" id="signupPhone" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" placeholder="e.g. 9876543210" autocomplete="tel" />
+        </div>
+
+        <div class="form-group" data-email-field-group="true">
+          <label for="signupEmail">Email ID <span class="badge-optional">Optional</span></label>
+          <input type="email" id="signupEmail" placeholder="name@example.com" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword">Password <span class="req-star">*</span></label>
+          <input type="password" id="signupPassword" required minlength="6" placeholder="Minimum 6 characters" autocomplete="new-password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="signupSubmitBtn" style="width:100%;">
+          Create Account &amp; Continue
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <div>Already have an account? <a href="/auth/login.html"><strong>Sign In</strong></a></div>
+        <div>
+          Need help?
+          <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener">WhatsApp</a> &middot;
+          <a data-email-link href="mailto:ffpunjugaming@gmail.com">Email Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+</html>
+

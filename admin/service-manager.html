@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Manager | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body data-page="admin-services">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/admin/dashboard.html" class="brand">
+        <span class="brand-icon">A</span>
+        <span><span data-logo-text>Srikanth Online Seva</span> Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/admin/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/admin/todo-list.html" class="nav-link">To-Do List <span class="nav-badge" data-todo-badge>0</span></a>
+        <a href="/admin/applications.html" class="nav-link">Applications</a>
+        <a href="/admin/service-manager.html" class="nav-link active">Services</a>
+        <a href="/admin/payment-settings.html" class="nav-link">Payments</a>
+        <a href="/admin/site-customizer.html" class="nav-link">Customizer</a>
+        <button type="button" class="btn btn-outline btn-sm" id="adminLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="page-header" style="margin-bottom:1rem;">
+        <div>
+          <h1>Folder-Based Service Manager</h1>
+          <p class="text-muted">Manage active services in <code>/services/</code> or generate a brand-new service folder with custom fields and dynamic QR pricing.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service Name</th>
+              <th>Folder Slug</th>
+              <th>ID Prefix</th>
+              <th>Service Fee (&#8377;)</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="serviceManagerTableBody">
+            <tr><td colspan="6" class="text-muted">Loading services...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:1.5rem;">
+      <h2>Create New Folder-Based Service</h2>
+      <p class="text-muted" style="margin-bottom:1rem;">Automatically creates <code>/services/&lt;slug&gt;/config.json</code> and <code>form.html</code> and publishes it immediately to the Customer Panel.</p>
+
+      <div id="createServiceAlert" class="alert alert-error hidden"></div>
+
+      <form id="createServiceForm">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="newServiceName">Service Name <span class="req-star">*</span></label>
+            <input type="text" id="newServiceName" required placeholder="e.g. Voter ID Card" />
+          </div>
+          <div class="form-group">
+            <label for="newServiceSlug">Folder Slug <span class="req-star">*</span></label>
+            <input type="text" id="newServiceSlug" required placeholder="e.g. voter-id" />
+          </div>
+          <div class="form-group">
+            <label for="newServicePrefix">Unique ID Prefix (3-5 chars) <span class="req-star">*</span></label>
+            <input type="text" id="newServicePrefix" required maxlength="6" placeholder="e.g. VOT" />
+          </div>
+          <div class="form-group">
+            <label for="newServiceFee">Service Fee (&#8377;) <span class="req-star">*</span></label>
+            <input type="number" id="newServiceFee" required min="0" step="1" value="100" />
+          </div>
+          <div class="form-group">
+            <label for="newServiceTime">Estimated Processing Time</label>
+            <input type="text" id="newServiceTime" value="3 - 5 Working Days" />
+          </div>
+          <div class="form-group" style="justify-content:center;">
+            <label class="toggle-switch">
+              <input type="checkbox" id="newServicePaymentEnabled" checked />
+              <span>Require Dynamic UPI QR Payment</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label for="newServiceDesc">Service Description</label>
+          <input type="text" id="newServiceDesc" placeholder="Short description shown on Customer Dashboard" />
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <h3 style="margin:0;">Form Fields Builder</h3>
+          <button type="button" class="btn btn-outline btn-sm" id="addBuilderFieldBtn">+ Add Field</button>
+        </div>
+
+        <div id="builderFieldsContainer"></div>
+
+        <div style="margin-top:1.25rem; display:flex; justify-content:flex-end;">
+          <button type="submit" class="btn btn-primary" id="createServiceSubmitBtn">
+            Generate Service Folder &amp; Publish
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
+

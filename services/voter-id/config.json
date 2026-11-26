@@ -1,0 +1,55 @@
+{
+  "service_name": "VOTER ID",
+  "folder_slug": "voter-id",
+  "id_prefix": "VOT",
+  "service_fee": 100,
+  "payment_enabled": true,
+  "is_active": true,
+  "description": "we will call for otp verification",
+  "estimated_time": "3 - 5 Working Days",
+  "fields": [
+    {
+      "name": "aadhar_card_front",
+      "label": "Aadhar card front",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true
+    },
+    {
+      "name": "aadhar_card_back",
+      "label": "Aadhar card back",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true
+    },
+    {
+      "name": "father_name",
+      "label": "father name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "mother_name",
+      "label": "mother name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "father_voter_id",
+      "label": "father voter id",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true
+    },
+    {
+      "name": "phone_number",
+      "label": "phone number",
+      "type": "tel",
+      "required": true,
+      "pattern": "^[0-9]{10}$"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment &amp; QR Settings | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body data-page="admin-payments">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/admin/dashboard.html" class="brand">
+        <span class="brand-icon">A</span>
+        <span><span data-logo-text>Srikanth Online Seva</span> Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/admin/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/admin/todo-list.html" class="nav-link">To-Do List <span class="nav-badge" data-todo-badge>0</span></a>
+        <a href="/admin/applications.html" class="nav-link">Applications</a>
+        <a href="/admin/service-manager.html" class="nav-link">Services</a>
+        <a href="/admin/payment-settings.html" class="nav-link active">Payments</a>
+        <a href="/admin/site-customizer.html" class="nav-link">Customizer</a>
+        <button type="button" class="btn btn-outline btn-sm" id="adminLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="paymentSettingsForm">
+      <section class="card">
+        <div class="page-header" style="margin-bottom:1rem;">
+          <div>
+            <h1>Payment Gateway &amp; Dynamic UPI QR Settings</h1>
+            <p class="text-muted">Configure Razorpay / Cashfree / PhonePe PG credentials, UPI VPA, and toggle Test/Sandbox Mode vs Live Mode.</p>
+          </div>
+          <button type="submit" class="btn btn-primary" id="savePaymentSettingsBtn">Save All Payment Settings</button>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="pgProvider">Payment Gateway</label>
+            <select id="pgProvider">
+              <option value="razorpay">Razorpay Dynamic UPI QR</option>
+              <option value="cashfree">Cashfree Payment Gateway</option>
+              <option value="phonepe">PhonePe PG Dynamic QR</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="justify-content:center;">
+            <label class="toggle-switch">
+              <input type="checkbox" id="pgTestMode" />
+              <span>Enable Test / Sandbox Mode (Built-in Simulator)</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="pgKeyId">Gateway Key ID / Client ID</label>
+            <input type="text" id="pgKeyId" placeholder="rzp_live_... or Cashfree App ID" />
+          </div>
+
+          <div class="form-group">
+            <label for="pgKeySecret">Gateway Key Secret</label>
+            <input type="password" id="pgKeySecret" placeholder="Enter gateway secret key" />
+          </div>
+
+          <div class="form-group">
+            <label for="pgWebhookSecret">Webhook HMAC Verification Secret</label>
+            <input type="text" id="pgWebhookSecret" placeholder="Secret used to verify POST /api/payment/webhook" />
+          </div>
+
+          <div class="form-group">
+            <label for="pgUpiId">Merchant UPI ID (VPA)</label>
+            <input type="text" id="pgUpiId" placeholder="e.g. 7997284383@ybl" />
+          </div>
+
+          <div class="form-group">
+            <label for="pgMerchantName">UPI Merchant Display Name</label>
+            <input type="text" id="pgMerchantName" placeholder="e.g. Srikanth Online Seva" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.5rem;">
+        <h2>Per-Service Pricing &amp; Payment Toggle</h2>
+        <p class="text-muted" style="margin-bottom:1rem;">Changes update Dynamic UPI QR amounts and Customer Dashboard cards immediately.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Service Name</th>
+                <th>Slug</th>
+                <th>Service Amount (&#8377;)</th>
+                <th>Payment Required</th>
+              </tr>
+            </thead>
+            <tbody id="servicePricingBody">
+              <tr><td colspan="4" class="text-muted">Loading services...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
+

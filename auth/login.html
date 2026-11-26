@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Login | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/auth/auth.css" />
+</head>
+<body>
+  <div class="announcement-bar hidden" data-announcement-banner></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/auth/login.html" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/auth/login.html" class="nav-link active">Login</a>
+        <a href="/auth/signup.html" class="nav-link" id="navSignupLink">Sign Up</a>
+        <a href="/customer/support.html" class="nav-link">Support</a>
+        <a href="/admin/admin-login.html" class="nav-link">Admin Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo-badge">S</div>
+        <h1 data-site-name style="font-size:1.5rem;">Srikanth Online Seva</h1>
+        <p class="text-muted">Customer Login — Apply for PAN Card &amp; Document Services</p>
+      </div>
+
+      <div id="authAlert" class="alert alert-error hidden"></div>
+
+      <form id="customerLoginForm" class="auth-form">
+        <div class="form-group">
+          <label for="loginIdentifier">Mobile Number or Email <span class="req-star">*</span></label>
+          <input type="text" id="loginIdentifier" required placeholder="Enter 10-digit mobile number" autocomplete="username" />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password <span class="req-star">*</span></label>
+          <input type="password" id="loginPassword" required placeholder="Enter your password" autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="loginSubmitBtn" style="width:100%;">
+          Sign In to Customer Portal
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <div id="signupPromptRow">
+          New here? <a href="/auth/signup.html"><strong>Create Customer Account</strong></a>
+        </div>
+        <div>
+          Need help?
+          <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener">WhatsApp</a> &middot;
+          <a data-email-link href="mailto:ffpunjugaming@gmail.com">Email Support</a>
+        </div>
+        <div>
+          <a href="/admin/admin-login.html" style="color:var(--text-muted); font-size:0.82rem;">Admin Staff Login &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Srikanth Online Seva | Online PAN Card &amp; Document Service Portal</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <style>
+    .home-hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 42%, #0f766e 82%, #059669 100%);
+      color: #ffffff;
+      border: 3px solid #93c5fd;
+      border-radius: 22px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 18px 45px rgba(29, 78, 216, 0.22);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .home-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .home-hero h1 {
+      font-size: clamp(1.75rem, 3.2vw, 2.55rem);
+      line-height: 1.18;
+      margin-bottom: 0.85rem;
+      color: #ffffff;
+    }
+
+    .home-hero p {
+      font-size: 1.02rem;
+      opacity: 0.95;
+      margin: 0 0 1.35rem 0;
+    }
+
+    .hero-feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-feature-pill {
+      background: rgba(15, 23, 42, 0.28);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 10px;
+      padding: 0.38rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+
+    .hero-preview-card {
+      background: #ffffff;
+      color: #0f172a;
+      border: 3px solid #fde047;
+      border-radius: 18px;
+      padding: 1.35rem;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.28);
+    }
+
+    .section-box {
+      border: 2px solid #cbd5e1;
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 0.9rem;
+      margin-bottom: 1.35rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .colorful-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      border-radius: 14px;
+      padding: 1.2rem;
+      border: 2px solid;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .step-card.blue   { background: #eff6ff; border-color: #3b82f6; }
+    .step-card.teal   { background: #f0fdfa; border-color: #14b8a6; }
+    .step-card.amber  { background: #fffbeb; border-color: #f59e0b; }
+    .step-card.green  { background: #f0fdf4; border-color: #22c55e; }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .step-card.blue .step-num  { background: #2563eb; }
+    .step-card.teal .step-num  { background: #0d9488; }
+    .step-card.amber .step-num { background: #d97706; }
+    .step-card.green .step-num { background: #16a34a; }
+
+    .services-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .home-service-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid #3b82f6;
+      border-top: 6px solid var(--primary);
+      border-radius: 15px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+    }
+
+    .interfaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .interface-panel-card {
+      border-radius: 16px;
+      padding: 1.35rem;
+      border: 2.5px solid;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .interface-panel-card.auth-panel {
+      background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+      border-color: #6366f1;
+    }
+
+    .interface-panel-card.customer-panel {
+      background: linear-gradient(180deg, #ecfeff 0%, #ffffff 100%);
+      border-color: #06b6d4;
+    }
+
+    .interface-panel-card.admin-panel {
+      background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%);
+      border-color: #f59e0b;
+    }
+
+    .interface-links-list {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .interface-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.62rem 0.85rem;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #0f172a;
+      transition: all 0.15s ease;
+    }
+
+    .interface-link-item:hover {
+      border-color: var(--primary);
+      background: #eff6ff;
+      color: var(--primary);
+      text-decoration: none;
+      transform: translateX(2px);
+    }
+
+    .support-cta-banner {
+      background: linear-gradient(135deg, #0f766e 0%, #16a34a 55%, #1d4ed8 100%);
+      color: #ffffff;
+      border: 3px solid #86efac;
+      border-radius: 18px;
+      padding: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .home-hero {
+        grid-template-columns: 1fr;
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="home-index">
+  <div class="announcement-bar" data-announcement-banner>
+    Fast, Trusted &amp; Automated Online PAN Card and Document Services
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="#servicesSection" class="nav-link">Services</a>
+        <a href="#interfacesSection" class="nav-link">All UI Panels</a>
+        <a href="/customer/support.html" class="nav-link">Support</a>
+        <a href="/auth/login.html" class="btn btn-outline btn-sm">Customer Login</a>
+        <a href="/auth/signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+        <a href="/admin/admin-login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Full-Colour Hero -->
+    <section class="home-hero">
+      <div>
+        <div class="home-hero-badge">Automated Dynamic UPI QR &amp; Live Tracking Portal</div>
+        <h1 data-welcome-title>Apply for PAN Card &amp; Government Document Services Online</h1>
+        <p data-welcome-subtitle>
+          Upload documents or capture directly with your camera, pay via instant Dynamic UPI QR, receive a Unique Application ID, and track every step live.
+        </p>
+
+        <div class="hero-feature-pills">
+          <span class="hero-feature-pill">Webcam &amp; Mobile Camera Capture</span>
+          <span class="hero-feature-pill">Instant Dynamic UPI QR</span>
+          <span class="hero-feature-pill">Auto Webhook Confirmation</span>
+          <span class="hero-feature-pill">Edit Before Admin Download</span>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+          <a href="/customer/apply.html?service=pan-card" class="btn" style="background:#fde047; color:#0f172a; border:2px solid #fef08a; font-weight:800;">
+            Apply for PAN Card Now &rarr;
+          </a>
+          <a href="/auth/signup.html" class="btn" style="background:#ffffff; color:#1e3a8a; border:2px solid #bfdbfe;">
+            Create Customer Account
+          </a>
+          <a href="/customer/track-status.html" class="btn" style="background:rgba(15,23,42,0.35); color:#ffffff; border:2px solid rgba(255,255,255,0.5);">
+            Track Application
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-preview-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:0.65rem; margin-bottom:0.85rem;">
+          <strong style="font-size:1rem;">Live Application Snapshot</strong>
+          <span class="badge badge-completed">Auto-Verified</span>
+        </div>
+        <div style="display:grid; gap:0.65rem; font-size:0.9rem;">
+          <div style="display:flex; justify-content:space-between; padding:0.55rem 0.75rem; background:#eff6ff; border:1.5px solid #93c5fd; border-radius:10px;">
+            <span>Unique App ID</span>
+            <span class="app-id-chip">PAN-2026-0001</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:0.55rem 0.75rem; background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px;">
+            <span>UPI QR Status</span>
+            <strong style="color:#15803d;">Paid &amp; Confirmed</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:0.55rem 0.75rem; background:#fffbeb; border:1.5px solid #fcd34d; border-radius:10px;">
+            <span>Workflow Stage</span>
+            <strong style="color:#b45309;">Pending &rarr; Applied &rarr; Completed</strong>
+          </div>
+          <div style="padding:0.65rem 0.75rem; background:#f8fafc; border:1.5px dashed #94a3b8; border-radius:10px; font-size:0.82rem; color:#475569;">
+            No manual UTR entry required — webhook &amp; 3-second polling confirm payment automatically.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Folder-Based Services Section -->
+    <section id="servicesSection" class="section-box" style="border-color:#93c5fd;">
+      <div class="section-title-row">
+        <div>
+          <h2 style="margin:0;">Available Online Document Services</h2>
+          <p class="text-muted" style="margin:0.2rem 0 0;">Live pricing and forms loaded directly from modular <code>/services/</code> folders.</p>
+        </div>
+        <a href="/customer/apply.html" class="btn btn-primary btn-sm">Open Application Form &rarr;</a>
+      </div>
+      <div id="homeServicesGrid" class="services-showcase">
+        <div class="card text-muted">Loading available services...</div>
+      </div>
+    </section>
+
+    <!-- 4-Step Workflow -->
+    <section class="section-box" style="border-color:#a5f3fc;">
+      <div class="section-title-row">
+        <div>
+          <h2 style="margin:0;">How Srikanth Online Seva Works</h2>
+          <p class="text-muted" style="margin:0.2rem 0 0;">Simple, transparent, and mobile-first end-to-end processing.</p>
+        </div>
+      </div>
+      <div class="colorful-steps">
+        <div class="step-card blue">
+          <span class="step-num">1</span>
+          <strong>Sign Up &amp; Select Service</strong>
+          <span class="text-muted">Register with your 10-digit mobile number and choose PAN Card or any active service.</span>
+        </div>
+        <div class="step-card teal">
+          <span class="step-num">2</span>
+          <strong>Upload or Camera Capture</strong>
+          <span class="text-muted">Upload PDF/JPEG/PNG files or snap clear document photos directly via phone or webcam.</span>
+        </div>
+        <div class="step-card amber">
+          <span class="step-num">3</span>
+          <strong>Scan Dynamic UPI QR</strong>
+          <span class="text-muted">Pay the exact Admin-configured fee. Automatic confirmation assigns your Unique App ID.</span>
+        </div>
+        <div class="step-card green">
+          <span class="step-num">4</span>
+          <strong>Track Until Completion</strong>
+          <span class="text-muted">Edit before admin download, then get your Official Application Number &amp; live tracking link.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- All User UI Interfaces Directory -->
+    <section id="interfacesSection" class="section-box" style="border-color:#c4b5fd;">
+      <div class="section-title-row">
+        <div>
+          <h2 style="margin:0;">All User UI Interfaces</h2>
+          <p class="text-muted" style="margin:0.2rem 0 0;">Direct bordered access to every Authentication, Customer, and Admin interface in the portal.</p>
+        </div>
+      </div>
+
+      <div class="interfaces-grid">
+        <!-- Auth UI -->
+        <div class="interface-panel-card auth-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; color:#3730a3;">1. Authentication UI</h3>
+            <span class="badge" style="background:#e0e7ff; color:#3730a3; border:1px solid #818cf8;">/auth</span>
+          </div>
+          <p class="text-muted" style="margin:0; font-size:0.86rem;">Secure JWT login &amp; customer signup interfaces with role-based access control.</p>
+          <div class="interface-links-list">
+            <a href="/auth/login.html" class="interface-link-item">
+              <span>Customer Login Page</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/auth/signup.html" class="interface-link-item">
+              <span>Customer Sign Up Page</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/admin-login.html" class="interface-link-item">
+              <span>Admin Staff Login (RBAC)</span>
+              <span>Open &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Customer UI -->
+        <div class="interface-panel-card customer-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; color:#0e7490;">2. Customer Portal UI</h3>
+            <span class="badge" style="background:#cffafe; color:#0e7490; border:1px solid #22d3ee;">/customer</span>
+          </div>
+          <p class="text-muted" style="margin:0; font-size:0.86rem;">Apply for services, scan Dynamic UPI QR, edit pending drafts, track status, and contact support.</p>
+          <div class="interface-links-list">
+            <a href="/customer/dashboard.html" class="interface-link-item">
+              <span>Customer Dashboard</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/customer/apply.html?service=pan-card" class="interface-link-item">
+              <span>PAN Card &amp; Service Apply Form</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/customer/edit-application.html" class="interface-link-item">
+              <span>Edit Pending Application</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/customer/track-status.html" class="interface-link-item">
+              <span>Track Application Status</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/customer/support.html" class="interface-link-item">
+              <span>Customer Support Center</span>
+              <span>Open &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Admin UI -->
+        <div class="interface-panel-card admin-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; color:#b45309;">3. Admin Control UI</h3>
+            <span class="badge" style="background:#fef3c7; color:#b45309; border:1px solid #fbbf24;">/admin</span>
+          </div>
+          <p class="text-muted" style="margin:0; font-size:0.86rem;">Manage To-Do queue, download ZIPs, build folder services, set UPI pricing &amp; customize theme.</p>
+          <div class="interface-links-list">
+            <a href="/admin/dashboard.html" class="interface-link-item">
+              <span>Admin Overview &amp; Quick Find</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/todo-list.html" class="interface-link-item">
+              <span>Pending To-Do Queue (FIFO)</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/applications.html" class="interface-link-item">
+              <span>All Applications &amp; ZIP Download</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/service-manager.html" class="interface-link-item">
+              <span>Folder-Based Service Builder</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/payment-settings.html" class="interface-link-item">
+              <span>Payment Gateway &amp; QR Pricing</span>
+              <span>Open &rarr;</span>
+            </a>
+            <a href="/admin/site-customizer.html" class="interface-link-item">
+              <span>Website &amp; Support Customizer</span>
+              <span>Open &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colourful Support Banner -->
+    <section class="support-cta-banner">
+      <div>
+        <h2 style="margin:0 0 0.35rem 0; color:#ffffff;">Need Assistance with Your Application?</h2>
+        <p style="margin:0; opacity:0.94;">
+          Contact <strong data-site-name>Srikanth Online Seva</strong> support anytime via WhatsApp (<strong data-whatsapp-number>7997284383</strong>) or Email (<strong data-email-address>ffpunjugaming@gmail.com</strong>).
+        </p>
+      </div>
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+        <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener" class="btn" style="background:#ffffff; color:#15803d; border:2px solid #bbf7d0;">
+          Chat on WhatsApp
+        </a>
+        <a data-email-link href="mailto:ffpunjugaming@gmail.com" class="btn" style="background:#0f172a; color:#ffffff; border:2px solid #93c5fd;">
+          Email Support
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <strong data-site-name>Srikanth Online Seva</strong> &middot;
+        <span data-footer-note>Authorized Digital Document Facilitation Center</span>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <span>WhatsApp: <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener"><strong data-whatsapp-number>7997284383</strong></a></span>
+        <span>Email: <a data-email-link href="mailto:ffpunjugaming@gmail.com"><strong data-email-address>ffpunjugaming@gmail.com</strong></a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const grid = document.getElementById('homeServicesGrid');
+      try {
+        const res = await fetch('/api/services').then((r) => r.json());
+        const services = res.services || [];
+        if (services.length === 0) {
+          grid.innerHTML = '<div class="card text-muted">No active services configured yet.</div>';
+          return;
+        }
+        grid.innerHTML = services.map((svc) => `
+          <article class="home-service-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
+                <h3 style="margin:0;">${svc.service_name}</h3>
+                <span class="service-fee-pill" style="border:1.5px solid #93c5fd;">${svc.payment_enabled ? `&#8377;${Number(svc.service_fee).toFixed(0)}` : 'Free'}</span>
+              </div>
+              <div style="margin-top:0.35rem;">
+                <span class="app-id-chip" style="font-size:0.75rem;">Prefix: ${svc.id_prefix}</span>
+              </div>
+              <p class="text-muted" style="margin:0.65rem 0 0;">${svc.description || 'Online document application service with automated UPI QR confirmation.'}</p>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1.5px solid #e2e8f0; padding-top:0.85rem;">
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Est: ${svc.estimated_time || '3 - 5 Days'}</span>
+              <a href="/customer/apply.html?service=${encodeURIComponent(svc.folder_slug)}" class="btn btn-primary btn-sm">
+                Apply Now &rarr;
+              </a>
+            </div>
+          </article>
+        `).join('');
+      } catch (err) {
+        grid.innerHTML = '<div class="alert alert-error">Unable to load live services right now.</div>';
+      }
+    });
+  </script>
+</body>
+</html>

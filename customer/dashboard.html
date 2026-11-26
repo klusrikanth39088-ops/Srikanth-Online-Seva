@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Dashboard | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/customer/customer.css" />
+</head>
+<body data-page="customer-dashboard">
+  <div class="announcement-bar hidden" data-announcement-banner></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/customer/dashboard.html" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/customer/dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="/customer/apply.html" class="nav-link">Apply Service</a>
+        <a href="/customer/track-status.html" class="nav-link">Track Status</a>
+        <a href="/customer/support.html" class="nav-link">Support</a>
+        <button type="button" class="btn btn-outline btn-sm" id="customerLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-banner">
+      <div>
+        <h1 data-welcome-title>Apply for PAN Card &amp; Government Document Services Online</h1>
+        <p data-welcome-subtitle>Upload documents or capture with camera, pay via instant Dynamic UPI QR, and track status in real time.</p>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:0.85rem; opacity:0.85;">Welcome back,</div>
+        <div id="customerNameDisplay" style="font-weight:800; font-size:1.15rem;">Customer</div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:2rem;">
+      <div class="page-header" style="margin-bottom:1rem;">
+        <div>
+          <h2>Available Services</h2>
+          <p class="text-muted">Select a service below to submit your application and pay instantly via Dynamic UPI QR.</p>
+        </div>
+      </div>
+      <div id="servicesGrid" class="services-grid">
+        <div class="card text-muted">Loading available services...</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="page-header" style="margin-bottom:1rem;">
+        <div>
+          <h2>My Submitted Applications</h2>
+          <p class="text-muted">Share your <strong>Unique Application ID</strong> with support for instant lookup. Edit is available until Admin downloads your documents.</p>
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" id="refreshAppsBtn">Refresh Status</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unique App ID</th>
+              <th>Service</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Submitted</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="myApplicationsBody">
+            <tr><td colspan="6" class="text-muted">Loading your applications...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <strong data-site-name>Srikanth Online Seva</strong> &middot;
+        <span data-footer-note>Authorized Digital Document Facilitation Center</span>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+        <span>WhatsApp Support: <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener"><strong data-whatsapp-number>7997284383</strong></a></span>
+        <span>Email: <a data-email-link href="mailto:ffpunjugaming@gmail.com"><strong data-email-address>ffpunjugaming@gmail.com</strong></a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/shared/auto-upi-qr.js"></script>
+  <script src="/customer/customer.js"></script>
+</body>
+</html>
+

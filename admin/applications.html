@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applications Manager | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body data-page="admin-applications">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/admin/dashboard.html" class="brand">
+        <span class="brand-icon">A</span>
+        <span><span data-logo-text>Srikanth Online Seva</span> Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/admin/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/admin/todo-list.html" class="nav-link">To-Do List <span class="nav-badge" data-todo-badge>0</span></a>
+        <a href="/admin/applications.html" class="nav-link active">Applications</a>
+        <a href="/admin/service-manager.html" class="nav-link">Services</a>
+        <a href="/admin/payment-settings.html" class="nav-link">Payments</a>
+        <a href="/admin/site-customizer.html" class="nav-link">Customizer</a>
+        <button type="button" class="btn btn-outline btn-sm" id="adminLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="quick-find-bar">
+      <input type="text" id="appSearchInput" placeholder="Search by Unique App ID (e.g. PAN-2026-0001), Phone, Name, Order ID, or Transaction ID..." />
+      <select id="appStatusFilter" style="width:auto; min-width:150px;">
+        <option value="All">All Statuses</option>
+        <option value="Pending">Pending (To-Do)</option>
+        <option value="Applied">Applied</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <select id="appServiceFilter" style="width:auto; min-width:170px;">
+        <option value="All">All Services</option>
+      </select>
+      <button type="button" class="btn btn-primary btn-sm" id="appSearchBtn">Filter</button>
+    </div>
+
+    <section class="card">
+      <div class="page-header" style="margin-bottom:1rem;">
+        <div>
+          <h1>All Paid Applications</h1>
+          <p class="text-muted">Inspect documents, download ZIP bundles (auto-marks Applied), and enter official tracking details.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unique App ID</th>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Payment &amp; Txn ID</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminApplicationsBody">
+            <tr><td colspan="6" class="text-muted">Loading applications...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Application Inspector Modal -->
+  <div id="appInspectorModal" class="modal-backdrop hidden">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <h2 id="inspectorTitle" style="margin:0;">Application Details</h2>
+          <div id="inspectorSubtitle" class="text-muted" style="font-size:0.84rem;"></div>
+        </div>
+        <button type="button" class="modal-close" id="inspectorCloseBtn">&times;</button>
+      </div>
+      <div id="inspectorBody"></div>
+    </div>
+  </div>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Application | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/customer/customer.css" />
+</head>
+<body data-page="customer-edit">
+  <div class="announcement-bar hidden" data-announcement-banner></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/customer/dashboard.html" class="brand">
+        <span class="brand-icon">S</span>
+        <span data-logo-text>Srikanth Online Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/customer/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/customer/apply.html" class="nav-link">Apply Service</a>
+        <a href="/customer/track-status.html" class="nav-link">Track Status</a>
+        <a href="/customer/support.html" class="nav-link">Support</a>
+        <button type="button" class="btn btn-outline btn-sm" id="customerLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <div>
+        <h1>Edit Application <span class="app-id-chip" id="editAppIdBadge">...</span></h1>
+        <p class="text-muted">Update your details or replace documents before the admin downloads them.</p>
+      </div>
+      <a href="/customer/dashboard.html" class="btn btn-outline">Back to Dashboard</a>
+    </div>
+
+    <div id="editLockBanner" class="alert alert-warning hidden"></div>
+    <div id="editErrorBox" class="alert alert-error hidden"></div>
+
+    <form id="editApplicationForm" class="card" novalidate>
+      <div id="editFormContainer">
+        <p class="text-muted">Loading application details...</p>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem; border-top:1px solid var(--border); padding-top:1.25rem; margin-top:1.5rem;">
+        <a href="/customer/dashboard.html" class="btn btn-outline">Cancel</a>
+        <button type="submit" class="btn btn-primary" id="saveEditBtn">Save Application Changes</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div><strong data-site-name>Srikanth Online Seva</strong></div>
+      <div>
+        WhatsApp: <a data-whatsapp-link href="https://wa.me/917997284383" target="_blank" rel="noopener"><strong data-whatsapp-number>7997284383</strong></a> &middot;
+        Email: <a data-email-link href="mailto:ffpunjugaming@gmail.com"><strong data-email-address>ffpunjugaming@gmail.com</strong></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/shared/camera-capture.js"></script>
+  <script src="/customer/customer.js"></script>
+</body>
+</html>
+

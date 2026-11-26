@@ -1,0 +1,135 @@
+<div class="service-form-wrapper" data-service-slug="pan-card">
+  <div class="form-section-header">
+    <h3>Applicant &amp; Family Details</h3>
+    <p class="text-muted">All fields marked with <span class="req-star">*</span> are mandatory. Only Email ID is optional.</p>
+  </div>
+
+  <div class="form-grid-2">
+    <div class="form-group">
+      <label for="field_father_name">Full Name of Father <span class="req-star">*</span></label>
+      <input type="text" id="field_father_name" name="father_name" required placeholder="Enter Father's Full Name" />
+    </div>
+
+    <div class="form-group">
+      <label for="field_mother_name">Full Name of Mother <span class="req-star">*</span></label>
+      <input type="text" id="field_mother_name" name="mother_name" required placeholder="Enter Mother's Full Name" />
+    </div>
+
+    <div class="form-group">
+      <label for="field_phone_number">Phone Number (10 digits) <span class="req-star">*</span></label>
+      <input type="tel" id="field_phone_number" name="phone_number" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" placeholder="e.g. 9876543210" />
+    </div>
+
+    <div class="form-group" data-email-field-group="true">
+      <label for="field_email">Email ID <span class="badge-optional">Optional</span></label>
+      <input type="email" id="field_email" name="email" placeholder="name@example.com (optional)" />
+    </div>
+  </div>
+
+  <div class="form-section-header">
+    <h3>Date of Birth Proof <span class="req-star">*</span></h3>
+    <p class="text-muted">Select your Date of Birth proof type and upload a clear copy or capture via camera.</p>
+  </div>
+
+  <div class="form-grid-2">
+    <div class="form-group">
+      <label for="field_dob_proof_type">Proof Type <span class="req-star">*</span></label>
+      <select id="field_dob_proof_type" name="dob_proof_type" required>
+        <option value="">-- Select Date of Birth Proof --</option>
+        <option value="Date of Birth Certificate">Date of Birth Certificate</option>
+        <option value="SSC Marks Memo">SSC Marks Memo</option>
+        <option value="Ayushman Bharat Card (Health Card)">Ayushman Bharat Card (Health Card)</option>
+        <option value="Voter ID">Voter ID</option>
+        <option value="Others">Others</option>
+      </select>
+    </div>
+
+    <div class="form-group hidden" id="dobOtherNameGroup">
+      <label for="field_dob_proof_other_name">Specify Document Name <span class="req-star">*</span></label>
+      <input type="text" id="field_dob_proof_other_name" name="dob_proof_other_name" placeholder="Enter exact document name" />
+    </div>
+  </div>
+
+  <div class="form-section-header">
+    <h3>Mandatory Documents &amp; Camera Upload</h3>
+    <p class="text-muted">Accepted formats: PDF, JPG, JPEG, PNG (Max 5 MB per file). Use your device camera or upload files.</p>
+  </div>
+
+  <div class="upload-cards-grid">
+    <div class="upload-card" data-upload-field="aadhaar_front">
+      <div class="upload-card-head">
+        <strong>Aadhaar Card Front <span class="req-star">*</span></strong>
+        <span class="file-status-pill" id="status_aadhaar_front">Required</span>
+      </div>
+      <div class="upload-actions">
+        <label class="btn btn-outline btn-sm">
+          <input type="file" name="aadhaar_front" accept=".pdf,.jpg,.jpeg,.png" capture="environment" class="sr-only-input" data-file-input="aadhaar_front" />
+          Upload / Mobile Cam
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm camera-trigger-btn" data-camera-for="aadhaar_front">Webcam Capture</button>
+      </div>
+      <div class="upload-preview" id="preview_aadhaar_front"></div>
+    </div>
+
+    <div class="upload-card" data-upload-field="aadhaar_back">
+      <div class="upload-card-head">
+        <strong>Aadhaar Card Back <span class="req-star">*</span></strong>
+        <span class="file-status-pill" id="status_aadhaar_back">Required</span>
+      </div>
+      <div class="upload-actions">
+        <label class="btn btn-outline btn-sm">
+          <input type="file" name="aadhaar_back" accept=".pdf,.jpg,.jpeg,.png" capture="environment" class="sr-only-input" data-file-input="aadhaar_back" />
+          Upload / Mobile Cam
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm camera-trigger-btn" data-camera-for="aadhaar_back">Webcam Capture</button>
+      </div>
+      <div class="upload-preview" id="preview_aadhaar_back"></div>
+    </div>
+
+    <div class="upload-card" data-upload-field="passport_photo">
+      <div class="upload-card-head">
+        <strong>Passport Photo <span class="req-star">*</span></strong>
+        <span class="file-status-pill" id="status_passport_photo">Required</span>
+      </div>
+      <div class="upload-actions">
+        <label class="btn btn-outline btn-sm">
+          <input type="file" name="passport_photo" accept=".pdf,.jpg,.jpeg,.png" capture="user" class="sr-only-input" data-file-input="passport_photo" />
+          Upload / Mobile Cam
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm camera-trigger-btn" data-camera-for="passport_photo">Webcam Capture</button>
+      </div>
+      <div class="upload-preview" id="preview_passport_photo"></div>
+    </div>
+
+    <div class="upload-card" data-upload-field="signature">
+      <div class="upload-card-head">
+        <strong>Signature <span class="req-star">*</span></strong>
+        <span class="file-status-pill" id="status_signature">Required</span>
+      </div>
+      <div class="upload-actions">
+        <label class="btn btn-outline btn-sm">
+          <input type="file" name="signature" accept=".pdf,.jpg,.jpeg,.png" capture="environment" class="sr-only-input" data-file-input="signature" />
+          Upload / Mobile Cam
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm camera-trigger-btn" data-camera-for="signature">Webcam Capture</button>
+      </div>
+      <div class="upload-preview" id="preview_signature"></div>
+    </div>
+
+    <div class="upload-card" data-upload-field="dob_proof_file">
+      <div class="upload-card-head">
+        <strong>Date of Birth Proof File <span class="req-star">*</span></strong>
+        <span class="file-status-pill" id="status_dob_proof_file">Required</span>
+      </div>
+      <div class="upload-actions">
+        <label class="btn btn-outline btn-sm">
+          <input type="file" name="dob_proof_file" accept=".pdf,.jpg,.jpeg,.png" capture="environment" class="sr-only-input" data-file-input="dob_proof_file" />
+          Upload / Mobile Cam
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm camera-trigger-btn" data-camera-for="dob_proof_file">Webcam Capture</button>
+      </div>
+      <div class="upload-preview" id="preview_dob_proof_file"></div>
+    </div>
+  </div>
+</div>
+

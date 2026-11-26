@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Customizer | Srikanth Online Seva</title>
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body data-page="admin-customizer">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/admin/dashboard.html" class="brand">
+        <span class="brand-icon">A</span>
+        <span><span data-logo-text>Srikanth Online Seva</span> Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/admin/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/admin/todo-list.html" class="nav-link">To-Do List <span class="nav-badge" data-todo-badge>0</span></a>
+        <a href="/admin/applications.html" class="nav-link">Applications</a>
+        <a href="/admin/service-manager.html" class="nav-link">Services</a>
+        <a href="/admin/payment-settings.html" class="nav-link">Payments</a>
+        <a href="/admin/site-customizer.html" class="nav-link active">Customizer</a>
+        <button type="button" class="btn btn-outline btn-sm" id="adminLogoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="siteCustomizerForm">
+      <div class="page-header">
+        <div>
+          <h1>Website Appearance, Support &amp; Feature Customizer</h1>
+          <p class="text-muted">Edit Customer Support details, typography, colors, branding text, and feature flags live across all panels.</p>
+        </div>
+        <button type="submit" class="btn btn-primary" id="saveCustomizerBtn">Save &amp; Publish Live</button>
+      </div>
+
+      <section class="card">
+        <h3>1. Editable Customer Support Details</h3>
+        <p class="text-muted" style="margin-bottom:1rem;">Updates reflect immediately on the Customer Support page, footer, and floating "Need Help?" button.</p>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="custSupportWhatsapp">WhatsApp Support Number</label>
+            <input type="text" id="custSupportWhatsapp" placeholder="e.g. 7997284383" />
+          </div>
+          <div class="form-group">
+            <label for="custSupportEmail">Support Email Address</label>
+            <input type="email" id="custSupportEmail" placeholder="e.g. ffpunjugaming@gmail.com" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.25rem;">
+        <h3>2. Branding &amp; Custom Portal Text</h3>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="custSiteName">Website Name</label>
+            <input type="text" id="custSiteName" />
+          </div>
+          <div class="form-group">
+            <label for="custLogoText">Header Logo Text</label>
+            <input type="text" id="custLogoText" />
+          </div>
+          <div class="form-group">
+            <label for="custAnnouncement">Header Announcement Banner</label>
+            <input type="text" id="custAnnouncement" placeholder="Leave blank to hide banner" />
+          </div>
+          <div class="form-group">
+            <label for="custApplyCta">Submit Button Label</label>
+            <input type="text" id="custApplyCta" />
+          </div>
+          <div class="form-group">
+            <label for="custWelcomeTitle">Customer Dashboard Welcome Title</label>
+            <input type="text" id="custWelcomeTitle" />
+          </div>
+          <div class="form-group">
+            <label for="custWelcomeSubtitle">Customer Dashboard Subtitle</label>
+            <input type="text" id="custWelcomeSubtitle" />
+          </div>
+          <div class="form-group">
+            <label for="custFooterNote">Footer Tagline / Contact Note</label>
+            <input type="text" id="custFooterNote" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.25rem;">
+        <h3>3. Typography &amp; Theme Colors</h3>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="custFontFamily">Google Font Family</label>
+            <select id="custFontFamily">
+              <option value="Inter">Inter</option>
+              <option value="Poppins">Poppins</option>
+              <option value="Roboto">Roboto</option>
+              <option value="Open Sans">Open Sans</option>
+              <option value="Lato">Lato</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="custFontSize">Base Font Size</label>
+            <select id="custFontSize">
+              <option value="14px">14px (Compact)</option>
+              <option value="15px">15px</option>
+              <option value="16px">16px (Default)</option>
+              <option value="17px">17px</option>
+              <option value="18px">18px (Large)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="custHeadingWeight">Heading Weight</label>
+            <select id="custHeadingWeight">
+              <option value="600">Semi-Bold (600)</option>
+              <option value="700">Bold (700)</option>
+              <option value="800">Extra Bold (800)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="custTextFormat">Heading Text Format</label>
+            <select id="custTextFormat">
+              <option value="none">Normal</option>
+              <option value="capitalize">Capitalize Each Word</option>
+              <option value="uppercase">UPPERCASE</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="custTextAlign">Global Text Alignment</label>
+            <select id="custTextAlign">
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="custPrimaryColor">Primary Color</label>
+            <input type="color" id="custPrimaryColor" style="height:42px; padding:0.2rem;" />
+          </div>
+          <div class="form-group">
+            <label for="custSecondaryColor">Secondary Color</label>
+            <input type="color" id="custSecondaryColor" style="height:42px; padding:0.2rem;" />
+          </div>
+          <div class="form-group">
+            <label for="custBackgroundColor">Background Color</label>
+            <input type="color" id="custBackgroundColor" style="height:42px; padding:0.2rem;" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.25rem;">
+        <h3>4. Feature Toggles</h3>
+        <div class="form-grid-2" style="margin-top:0.75rem;">
+          <label class="toggle-switch">
+            <input type="checkbox" id="flagCameraCapture" />
+            <span>Enable Webcam / Camera Capture</span>
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="flagShowEmail" />
+            <span>Show Optional Email Field on Forms</span>
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="flagAllowReg" />
+            <span>Allow New Customer Registration</span>
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="flagFloatingSupport" />
+            <span>Show Floating "Need Help?" Support Widget</span>
+          </label>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/shared/theme-loader.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
+

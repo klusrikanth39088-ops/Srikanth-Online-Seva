@@ -1,0 +1,37 @@
+{
+  "service_name": "Template Document Service",
+  "folder_slug": "_template",
+  "id_prefix": "DOC",
+  "service_fee": 100,
+  "payment_enabled": true,
+  "is_active": false,
+  "description": "Boilerplate configuration for folder-based document services.",
+  "estimated_time": "3 - 5 Working Days",
+  "fields": [
+    {
+      "name": "applicant_name",
+      "label": "Applicant Full Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter full name"
+    },
+    {
+      "name": "phone_number",
+      "label": "Phone Number",
+      "type": "tel",
+      "required": true,
+      "pattern": "^[0-9]{10}$",
+      "placeholder": "10-digit mobile number"
+    },
+    {
+      "name": "supporting_document",
+      "label": "Supporting Document",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Upload PDF, JPG, JPEG, or PNG (max 5MB)."
+    }
+  ]
+}
+

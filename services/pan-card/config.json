@@ -1,0 +1,110 @@
+{
+  "service_name": "PAN Card Application",
+  "folder_slug": "pan-card",
+  "id_prefix": "PAN",
+  "service_fee": 150,
+  "payment_enabled": true,
+  "is_active": true,
+  "description": "New PAN Card application with Aadhaar Front/Back, Passport Photo, Signature, Parent Details, and Date of Birth Proof.",
+  "estimated_time": "3 - 7 Working Days",
+  "fields": [
+    {
+      "name": "aadhaar_front",
+      "label": "Aadhaar Card Front",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Upload clear front side of Aadhaar Card (PDF, JPG, PNG, or Camera Capture, max 5MB)."
+    },
+    {
+      "name": "aadhaar_back",
+      "label": "Aadhaar Card Back",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Upload clear back side of Aadhaar Card (PDF, JPG, PNG, or Camera Capture, max 5MB)."
+    },
+    {
+      "name": "passport_photo",
+      "label": "Passport Photo",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Recent passport-size photograph with clear face visibility (max 5MB)."
+    },
+    {
+      "name": "signature",
+      "label": "Signature",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Signature on plain white paper with black/blue ink (max 5MB)."
+    },
+    {
+      "name": "father_name",
+      "label": "Full Name of Father",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter Father's Full Name as per records"
+    },
+    {
+      "name": "mother_name",
+      "label": "Full Name of Mother",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter Mother's Full Name as per records"
+    },
+    {
+      "name": "phone_number",
+      "label": "Phone Number",
+      "type": "tel",
+      "required": true,
+      "pattern": "^[0-9]{10}$",
+      "placeholder": "Enter 10-digit mobile number"
+    },
+    {
+      "name": "email",
+      "label": "Email ID",
+      "type": "email",
+      "required": false,
+      "placeholder": "Optional email for e-PAN & updates"
+    },
+    {
+      "name": "dob_proof_type",
+      "label": "Date of Birth Proof",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Date of Birth Certificate",
+        "SSC Marks Memo",
+        "Ayushman Bharat Card (Health Card)",
+        "Voter ID",
+        "Others"
+      ]
+    },
+    {
+      "name": "dob_proof_other_name",
+      "label": "Specify Other DOB Proof Document",
+      "type": "text",
+      "required": false,
+      "conditional_on": {
+        "field": "dob_proof_type",
+        "value": "Others"
+      },
+      "placeholder": "Enter document name (e.g., Passport, Driving License)"
+    },
+    {
+      "name": "dob_proof_file",
+      "label": "Date of Birth Proof Document",
+      "type": "file",
+      "required": true,
+      "accept": ".pdf,.jpg,.jpeg,.png",
+      "allow_camera": true,
+      "help_text": "Upload selected Date of Birth proof document (PDF, JPG, PNG, or Camera Capture, max 5MB)."
+    }
+  ]
+}
